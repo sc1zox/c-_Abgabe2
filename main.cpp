@@ -109,7 +109,7 @@ public:
                 student->applyKurs(this);
                 this->s[teilnehmerzahl] = student;
                 teilnehmerzahl++;
-            } catch (invalid_argument &e) {
+            } catch (invalid_argument&) {
                 throw;
             }
         } else {
@@ -374,7 +374,7 @@ public:
         }
     }
 
-    Kurs *printAllCourseNamesAndGiveSelection() {
+    Kurs *printAllCourseNamesAndGiveSelection() const {
         Kurs *current = headKurs;
 
         if (headKurs == nullptr) {
@@ -419,7 +419,7 @@ public:
         }
     }
 
-    void deleteStudent(Student &student) {
+    void deleteStudent(const Student &student) {
         Student *current = headStudent;
 
         Kurs *deleteStudentInKurs = student.kurs;
